@@ -1,0 +1,277 @@
+*, *:after, *:before {
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+transition: .5s ease-in-out; /* добавим плавность переходов для всех элементов страницы*/
+}
+ul {
+list-style: none;
+}
+a {
+text-decoration: none;
+outline: none;
+}
+img {
+border-radius: 10%;
+display: block;
+width: 100%;
+
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Playfair Display';
+font-weight: normal;
+letter-spacing: 1px;
+}
+body {
+font-family: 'Open Sans', arial, sans-serif;
+font-size: 14px;
+line-height: 1;
+color: #373737;
+background: #f7f7f7;
+}
+/* добавим очистку потока для всех контейнеров, внутри которых задано обтекание дочерних элементов */
+header:after, .container:after, footer:after, .widget-posts-list li:after, #subscribe:after {
+content: "";
+display: table;
+clear: both;
+} 
+
+.sidebar {
+float: right;
+}
+
+/* стилевой класс, который управляет шириной контейнера сетки*/
+.container {
+margin: 0 auto;
+width: 100%;
+max-width: 960px;
+padding: 0 15px;
+} 
+header {
+width: 100%;
+background: white;
+box-shadow: 3px 3px 1px rgba(0,0,0,.05);
+padding: 15px 0;
+margin-bottom: 30px;
+position: relative;
+}
+/* меню */
+#menu {
+float: center;
+}
+#menu li {
+display: inline-block;
+margin-right: 30px;
+}
+#menu a {
+color: #111;
+text-transform: uppercase;
+letter-spacing: 4px;
+font-weight: 700;
+display: block;
+line-height: 40px;
+}
+
+
+
+/* левый контейнер */
+.posts-list {
+margin-bottom: 30px;
+width: 64%;
+float: left;
+}
+/* блок для статьи */
+.post {
+margin-bottom: 35px;
+
+}
+.post-content p {
+line-height: 1.5;
+padding-bottom: 1em;
+}
+.post-image {
+margin-bottom: 30px;
+}
+.category {
+margin-bottom: 15px;
+}
+.category a {
+color: 920000;
+text-transform: uppercase;
+}
+.post-title {
+margin-bottom: 12px;
+font-size: 26px;
+}
+.map{
+    float: center;
+}
+.post-footer {
+border-top: 1px solid #EBEBE3;
+border-bottom: 1px solid #EBEBE3;
+position: relative;
+margin-top: 15px;
+}
+
+
+
+
+/* правый контейнер */
+aside {
+float: right;
+
+
+
+width: 33%;
+
+}
+/* блок для виджетов */
+.widget {
+padding: 20px 15px;
+background: white;
+font-size: 13px;
+margin-bottom: 30px;
+box-shadow: 3px 3px 1px rgba(0,0,0,.05);
+border-radius: 5%;
+position: fixed;
+display: block;
+}
+.widget-title {
+font-size: 18px;
+padding: 10px;
+margin-bottom: 20px;
+text-align: center;
+border: 2px solid black;
+box-shadow: 3px 3px 1px grey;
+
+
+}
+.widget-category-list li {
+border-bottom: 1px solid #EBEBE3;
+padding: 10px 0;
+color: #c6c6c6;
+font-style: italic;
+}
+.widget-category-list li:last-child {
+border-bottom: none;
+}
+.widget-category-list li a {
+color: #626262;
+margin-right: 6px;
+font-style: normal;
+}
+.widget-category-list li a:before {
+content: "\f105";
+display: inline-block;
+font-family: 'FontAwesome';
+margin-right: 10px;
+color: #c6c6c6;
+}
+.widget-posts-list li {
+border-top: 1px solid #EBEBE3;
+padding: 15px 0;
+}
+.widget-posts-list li:nth-child(1) {
+border-top: none;
+}
+.post-image-small {
+width: 30%;
+float: left;
+margin-right: 15px;
+}
+.widget-post-title {
+float: left;
+}
+
+footer {
+padding: 30px 0;
+background: #3C3D41;
+color: white;
+}
+.footer-col {
+width: 33.3333333333%;
+float: left;
+}
+.footer-col a {
+color: white;
+}
+.footer-col:last-child {
+text-align: right;
+}
+.social-bar-wrap {
+text-align: center;
+}
+.social-bar-wrap a {
+padding: 0 7px;
+font-size: 18px;
+}
+@media (max-width: 768px) {
+/* показываем кнопку для переключения верхней навигации */
+.nav-toggle {
+display: block;
+}
+header {
+padding: 10px 0;
+}
+/* скрываем верхнее меню, отменяем обтекание, позиционируем его, сместив на высоту шапки сайта */ 
+#menu {
+max-height: 0;
+background: white;
+float: none;
+position: absolute;
+overflow: hidden;
+top: 63px;
+right: 0;
+left: 0;
+margin: 0;
+padding: 0;
+z-index: 3;
+}
+/* делаем элементы списка блочными, чтобы они располагались друг под другом */
+#menu li {
+display: block;
+text-align: center;
+border-bottom: 1px solid #EBEBE3;
+margin-right: 0;
+}
+/* отменяем обтекание левой и правой колонок, устанавливаем им ширину 100%*/
+.posts-list, aside {
+width: 100%;
+float: none;
+}
+.widget-post-title {
+font-size: 1.5em;
+}
+}
+@media (max-width: 480px) {
+
+
+/* позиционируем меню на увеличившуюся высоту шапки */
+#menu {
+top: 118px;
+}
+/* позиционируем форму поиска по левому краю */
+#searchform {
+float: left;
+margin-left: 0;
+}
+/* убираем верхнюю и нижнюю границы и выравниваем кнопку по центру */
+.post-footer {
+border-top: none;
+border-bottom: none;
+text-align: center;
+}
+/* отменяем обтекание для столбцов подвала страницы */
+.footer-col {
+float: none;
+margin-bottom: 20px;
+width: 100%;
+text-align: center;
+}
+.footer-col:last-child {
+text-align: center;
+margin-bottom: 0;
+}
+}
+
+
